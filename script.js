@@ -1,30 +1,32 @@
-let currentAnswer = 0;
+// script.js
+let num1, num2, correctAnswer;
 
 function generateProblem() {
-  const num1 = Math.floor(Math.random() * 10) + 1;
-  const num2 = Math.floor(Math.random() * 10) + 1;
-  const operations = ['+', '-', '*'];
-  const operation = operations[Math.floor(Math.random() * operations.length)];
+    num1 = Math.floor(Math.random() * 10) + 1;
+    num2 = Math.floor(Math.random() * 10) + 1;
+    correctAnswer = num1 + num2;
 
-  let question = `${num1} ${operation} ${num2}`;
-  currentAnswer = eval(question);
-
-  document.getElementById('problem').textContent = `¿Cuánto es ${question}?`;
-  document.getElementById('answer').value = '';
-  document.getElementById('feedback').textContent = '';
+    // Mostrar los números del problema en el HTML
+    document.getElementById("num1").textContent = num1;
+    document.getElementById("num2").textContent = num2;
+    document.getElementById("resultMessage").textContent = "";
+    document.getElementById("nextProblem").style.display = "none";
+    document.getElementById("userAnswer").value = "";
 }
 
-function checkAnswer() {
-  const userAnswer = parseInt(document.getElementById('answer').value);
-  const feedback = document.getElementById('feedback');
+document.getElementById("checkAnswer").addEventListener("click", function() {
+    const userAnswer = parseInt(document.getElementById("userAnswer").value);
 
-  if (userAnswer === currentAnswer) {
-    feedback.textContent = '✅ ¡Correcto!';
-    feedback.style.color = 'green';
-  } else {
-    feedback.textContent = `❌ Incorrecto. La respuesta era ${currentAnswer}`;
-    feedback.style.color = 'red';
-  }
-}
+    if (userAnswer === correctAnswer) {
+        document.getElementById("resultMessage").textContent = "¡Correcto! Bien hecho.";
+        document.getElementById("nextProblem").style.display = "inline-block";
+    } else {
+        document.getElementById("resultMessage").textContent = "Incorrecto. Intenta nuevamente.";
+    }
+});
 
-generateProblem();
+document.getElementById("nextProblem").addEventListener("click", function() {
+    generateProblem();
+});
+
+generateProblem(); // Llamamos a la función para generar el primer problema
