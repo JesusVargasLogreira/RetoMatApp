@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Problemas Matemáticos</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Pronto RetoMatApp</h1>
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>🧠 Problemas Matemáticos</h1>
+    <div id="problem"></div>
+    <input type="number" id="answer" placeholder="Tu respuesta" />
+    <button onclick="checkAnswer()">Verificar</button>
+    <p id="feedback"></p>
+    <button onclick="generateProblem()">Siguiente problema</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
