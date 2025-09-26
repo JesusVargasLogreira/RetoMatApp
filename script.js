@@ -29,4 +29,4 @@ document.getElementById("nextProblem").addEventListener("click", function() {
     generateProblem();
 });
 
-generateProblem(); // Llamamos a la función para generar el primer problema
+generateProblem(); // Generar el primer problema
