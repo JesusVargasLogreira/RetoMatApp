@@ -1,14 +1,17 @@
-/* style.css (Modo Oscuro adaptado a WebView Android) */
+/* style.css (Modo Oscuro adaptado a WebView Android y centrado en pantalla) */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #e0e0e0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Centrado vertical */
 }
 
 .container {
-    margin: 0 auto;
-    margin-top: 15vh;
     text-align: center;
     background-color: #1e1e1e;
     padding: 20px;
@@ -24,15 +27,22 @@ h1 {
     color: #ffffff;
 }
 
-.problem p {
+.scoreboard {
+    margin-bottom: 15px;
     font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.problem p {
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
 input {
     padding: 12px;
     font-size: 18px;
-    /* más grande para móvil */
+    /* cómodo en móvil */
     margin-bottom: 10px;
     border: 1px solid #444;
     border-radius: 4px;
@@ -40,6 +50,7 @@ input {
     color: #e0e0e0;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
 
 input:focus {

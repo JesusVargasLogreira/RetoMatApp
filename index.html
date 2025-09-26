@@ -11,9 +11,15 @@
 <body>
     <div class="container">
         <h1>Resuelve los problemas matemáticos</h1>
-        <div id="problem" class="problem">
-            <p>¿Cuánto es <span id="num1"></span> + <span id="num2"></span>?</p>
+
+        <div class="scoreboard">
+            <p>Aciertos: <span id="correctCount">0</span> | Errores: <span id="wrongCount">0</span></p>
         </div>
+
+        <div id="problem" class="problem">
+            <p><span id="num1"></span> <span id="operator"></span> <span id="num2"></span> = ?</p>
+        </div>
+
         <input type="number" id="userAnswer" placeholder="Escribe tu respuesta">
         <button id="checkAnswer">Comprobar Respuesta</button>
         <p id="resultMessage"></p>
